@@ -1,15 +1,9 @@
 package main
 
-import "sync"
+import (
+	u "github.com/branogarbo/CPU_test/util"
+)
 
 func main() {
-	var wg sync.WaitGroup
-
-	wg.Add(1)
-
-	for i := 0; i < 25; i++ {
-		go RunTests(i)
-	}
-
-	wg.Wait()
+	u.Run()
 }

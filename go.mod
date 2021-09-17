@@ -1,4 +1,4 @@
-module CPU_test
+module github.com/branogarbo/CPU_test
 
 go 1.17
 

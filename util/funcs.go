@@ -1,9 +1,10 @@
-package main
+package util
 
 import (
 	"fmt"
 	"log"
 	"math/rand"
+	"sync"
 
 	"github.com/branogarbo/mtrix/inverse"
 	u "github.com/branogarbo/mtrix/util"
@@ -36,8 +37,20 @@ func UnitOperation(num int) {
 	fmt.Println("goroutine number", num, ":", det)
 }
 
-func RunTests(num int) {
+func RunOps(num int) {
 	for {
 		UnitOperation(num)
 	}
+}
+
+func Run() {
+	var wg sync.WaitGroup
+
+	wg.Add(1)
+
+	for i := 0; i < 25; i++ {
+		go RunOps(i)
+	}
+
+	wg.Wait()
 }
