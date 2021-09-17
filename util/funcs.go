@@ -43,12 +43,12 @@ func RunOps(num int) {
 	}
 }
 
-func Run() {
+func Run(goroutines int) {
 	var wg sync.WaitGroup
 
 	wg.Add(1)
 
-	for i := 0; i < 25; i++ {
+	for i := 0; i < goroutines; i++ {
 		go RunOps(i)
 	}
 

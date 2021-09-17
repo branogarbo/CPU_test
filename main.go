@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	u.Run()
+	u.Run(10)
 }
