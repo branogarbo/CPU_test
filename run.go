@@ -4,15 +4,20 @@ import (
 	"sync"
 )
 
-func Run(concurrencies int, unitOperation func(gorNum int)) {
+type Config struct {
+	Concurrency int
+	Operation   func(goNum int)
+}
+
+func Run(c Config) {
 	var wg sync.WaitGroup
 
 	wg.Add(1)
 
-	for i := 0; i < concurrencies; i++ {
+	for i := 0; i < c.Concurrency; i++ {
 		go func(i int) {
 			for {
-				unitOperation(i)
+				c.Operation(i)
 			}
 		}(i)
 	}
