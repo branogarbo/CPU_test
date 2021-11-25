@@ -12,11 +12,11 @@ import (
 
 func main() {
 	config := c.Config{
-		Concurrency: 5,
+		Concurrency: 10,
 		Operation: func(goNum int) {
 			m := u.PopulateNewMat(u.MatPopConfig{
 				MainMat: u.InitMat(9, 9),
-				Action: func(mv u.MatVal, r, c int, secMvs []u.MatVal) float64 {
+				Action: func(m u.Matrix, r, c int, secMs []u.Matrix) float64 {
 					return rand.Float64()*200 - 100
 				},
 			})

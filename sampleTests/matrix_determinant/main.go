@@ -16,7 +16,7 @@ func main() {
 		Operation: func(goNum int) {
 			m := u.PopulateNewMat(u.MatPopConfig{
 				MainMat: u.InitMat(5, 5),
-				Action: func(mv u.MatVal, r, c int, secMvs []u.MatVal) float64 {
+				Action: func(m u.Matrix, r, c int, secMs []u.Matrix) float64 {
 					return rand.Float64()*200 - 100
 				},
 			})

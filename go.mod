@@ -2,7 +2,7 @@ module github.com/branogarbo/CPU_test
 
 go 1.17
 
-require github.com/branogarbo/mtrix v1.10.0
+require github.com/branogarbo/mtrix v1.12.1
 
 require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
